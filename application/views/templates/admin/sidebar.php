@@ -65,7 +65,7 @@
 						</li>
 						<li class="nav-header">MAIN</li>
                         <li class="nav-item">
-							<a href="<?= base_url('admin/dashboard') ?>" class="nav-link">
+							<a href="<?= base_url('admin/kategori') ?>" class="nav-link">
 								<i class="nav-icon fa fa-list-alt"></i>
 								<p>
 									Kategori
