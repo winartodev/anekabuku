@@ -21,9 +21,10 @@
 
         public function add_kategori() 
         {
+            $data['get_number'] = $this->model_kategori->generate_number();
             $this->load->view('templates/admin/header.php');
             $this->load->view('templates/admin/sidebar.php');
-            $this->load->view('admin/form_insert_kategori.php');
+            $this->load->view('admin/form_insert_kategori.php', $data);
             $this->load->view('templates/admin/footer.php');
         }
 
@@ -49,9 +50,11 @@
             } 
             else 
             {
-                $nama_kategori = $this->input->post('nama_kategori');
+                $id_kategori    = $this->input->post('id_kategori'); 
+                $nama_kategori  = $this->input->post('nama_kategori');
 
                 $data = array (
+                    'id_kategori'   => $id_kategori,
                     'nama_kategori' => $nama_kategori
                 );
 

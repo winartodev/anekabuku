@@ -35,6 +35,11 @@
   										</div>
   										<div class="card-body">
   											<div class="form-group">
+  												<label>Kode Kategori</label>
+  												<input type="text" name="id_kategori" class="form-control" value="<?= $get_number ?>" readonly>
+  												<?= form_error('id_kategori', '<div class="text-small text-danger">', '</div>'); ?>
+  											</div>
+  											<div class="form-group">
   												<label>Nama Kategori</label>
   												<input type="text" name="nama_kategori" class="form-control">
   												<?= form_error('nama_kategori', '<div class="text-small text-danger">', '</div>'); ?>
