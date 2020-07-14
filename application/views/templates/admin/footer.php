@@ -27,23 +27,38 @@
 <script src="<?= base_url('assets') ?>/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url('assets') ?>/dist/js/demo.js"></script>
+<!-- Select2 -->
+<script src="<?= base_url('assets') ?>/plugins/select2/js/select2.full.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="<?= base_url('assets') ?>/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- page script -->
 <script>
   $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
+  	$("#example1").DataTable({
+  		"responsive": true,
+  		"autoWidth": false,
+  	});
+  	$('#example2').DataTable({
+  		"paging": true,
+  		"lengthChange": false,
+  		"searching": false,
+  		"ordering": true,
+  		"info": true,
+  		"autoWidth": false,
+  		"responsive": true,
+  	});
   });
+  //Initialize Select2 Elements
+  $('.select2').select2()
+
+  //Initialize Select2 Elements
+  $('.select2bs4').select2({
+  	theme: 'bootstrap4'
+  });
+
+  $(document).ready(function () {
+  bsCustomFileInput.init();
+});
 </script>
 </body>
 </html>
