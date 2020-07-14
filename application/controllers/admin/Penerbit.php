@@ -3,7 +3,8 @@
 
     class Penerbit extends CI_Controller 
     {
-        public function __construct(){
+        public function __construct()
+        {
             parent::__construct();		
             $this->load->model('model_penerbit');
             $this->load->library('form_validation');
