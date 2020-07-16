@@ -23,6 +23,8 @@
 	<!-- Select2 -->
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/plugins/select2/css/select2.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-
+	<!-- icon -->
 	<link rel="icon" href="<?= base_url('assets') ?>/dist/img/icon.jpg">
+	<!-- jQuery -->
+	<script src="<?= base_url('assets') ?>/plugins/jquery/jquery.min.js"></script>
 </head>
