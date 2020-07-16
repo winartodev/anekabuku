@@ -81,7 +81,7 @@
                 else 
                 {
                     $config ['upload_path']     = './assets/upload';
-                    $config ['file_name']       = $isbn; 
+                    $config ['file_name']       = strval($isbn); 
                     $config ['allowed_types']   = 'jpg|jpeg|png|gif';
                     $config ['overwrite']       = TRUE; 
 
@@ -154,7 +154,7 @@
                 if ($gambar) 
                 {
                     $config ['upload_path']     = './assets/upload/';
-                    $config ['file_name']       = $isbn; 
+                    $config ['file_name']       = strval($isbn); 
                     $config ['allowed_types']   = 'jpg|jpeg|png|gif';
                     $config ['overwrite']       = TRUE; 
 
