@@ -68,7 +68,7 @@
 
 						<li class="nav-header">KATEGORI</li>
 						<li class="nav-item has-treeview">
-							<a href="#" class="nav-link">
+							<a href="" class="nav-link">
 								<i class="nav-icon fas fa-list"></i>
 								<p>
 									Kategori
@@ -78,7 +78,7 @@
 							<ul class="nav nav-treeview">
 								<?php foreach($kategori as $_kategori): ?>
 								<li class="nav-item">
-									<a href="<?= base_url('admin/kategori') ?>" class="nav-link">
+									<a href="<?= base_url('guest/kategori/subcat/').$_kategori->id_kategori ?>" class="nav-link">
 										<i class="nav-icon-sm fa  fa-circle fa-sm"></i>
 										<p>
 											<?= $_kategori->nama_kategori; ?>
