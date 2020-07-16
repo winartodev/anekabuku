@@ -47,8 +47,6 @@
                 $filename = explode(".", $data->gambar)[0];
                 return array_map('unlink', glob(FCPATH."assets/upload/$filename.*"));
             }
-
-           
         }
 
         public function update_data($id, $data, $table)
