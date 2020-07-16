@@ -56,4 +56,11 @@
             $this->db->where($id);
             $this->db->update($table, $data);
         }
+
+        public function get_buku_by_kategori($id, $table) 
+        {
+            return $this->db->from($table)  -> join('tbl_buku', 'tbl_buku.id_kategori = tbl_kategori.id_kategori')
+                                            -> where('tbl_kategori.id_kategori', $id)
+                                            -> get()->result();
+        }
     }
