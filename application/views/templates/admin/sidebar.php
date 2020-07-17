@@ -31,7 +31,7 @@
 		<!-- Main Sidebar Container -->
 		<aside class="main-sidebar sidebar-light-light elevation-4">
 			<!-- Brand Logo -->
-			<a href="index3.html" class="brand-link">
+			<a href="<?= base_url('admin/dashboard') ?>" class="brand-link">
 				<img src="<?= base_url('assets') ?>/dist/img/icon.jpg" alt="Aneka Buku Logo" class="brand-image img-circle elevation-3"
 					>
 				<span class="brand-text font-weight-light">Aneka Buku</span>
@@ -42,10 +42,10 @@
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div class="image">
-						<img src="<?= base_url('assets') ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+						<img src="<?= base_url('assets/upload/petugas/').$this->session->userdata('foto') ?>" class="img-circle elevation-2" alt="User Image">
 					</div>
 					<div class="info">
-						<a href="#" class="d-block">Alexander Pierce</a>
+						<a href="<?= base_url('petugas/info/').$this->session->userdata('id_petugas') ?>" class="d-block">Hi, <?= $this->session->userdata('nama_petugas') ?></a>
 					</div>
 				</div>
 
@@ -107,7 +107,7 @@
 						</li>
 						<li class="nav-header">SETTINGS</li>
                         <li class="nav-item">
-							<a href="<?= base_url('admin/dashboard') ?>" class="nav-link">
+							<a href="<?= base_url('admin/user/info/').$this->session->userdata('id_petugas') ?>" class="nav-link">
 								<i class="nav-icon fa fa-user"></i>
 								<p>
 									User
@@ -115,7 +115,7 @@
 							</a>
 						</li>   
                         <li class="nav-item">
-							<a href="<?= base_url('admin/dashboard') ?>" class="nav-link">
+							<a href="<?= base_url('guest/logout') ?>" class="nav-link">
 								<i class="nav-icon fa fa-times"></i>
 								<p>
 									Log Out
