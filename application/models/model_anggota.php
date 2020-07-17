@@ -18,6 +18,11 @@
             return $this->db->get_where($table, $id)->result();
         }
 
+        public function count_anggota() 
+        {
+            return $this->db->get('tbl_anggota')->num_rows();
+        }
+
         public function info_anggota($id, $table) 
         {
             return $this->db->get_where($table, $id)->result();
