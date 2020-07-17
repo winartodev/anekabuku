@@ -42,7 +42,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $anggota ?></h3>
 
                 <p>Jumlah Anggota</p>
               </div>
@@ -72,9 +72,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $petugas ?></h3>
 
-                <p>Jumlah Petugas Perpustakaan</p>
+                <p>Jumlah Petugas</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
