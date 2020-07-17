@@ -58,6 +58,7 @@
         public function get_buku_by_kategori($id, $table) 
         {
             return $this->db->from($table)  -> join('tbl_buku', 'tbl_buku.id_kategori = tbl_kategori.id_kategori')
+                                            -> join('tbl_penerbit', 'tbl_penerbit.id_penerbit = tbl_buku.id_penerbit')
                                             -> where('tbl_kategori.id_kategori', $id)
                                             -> get()->result();
         }
