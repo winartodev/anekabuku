@@ -89,6 +89,22 @@
 								</p>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a href="<?= base_url('admin/anggota') ?>" class="nav-link">
+								<i class="nav-icon fa fa-users"></i>
+								<p>
+									Anggota
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url('admin/petugas') ?>" class="nav-link">
+								<i class="nav-icon fa fa-users"></i>
+								<p>
+									Petugas
+								</p>
+							</a>
+						</li>
 						<li class="nav-header">SETTINGS</li>
                         <li class="nav-item">
 							<a href="<?= base_url('admin/dashboard') ?>" class="nav-link">
