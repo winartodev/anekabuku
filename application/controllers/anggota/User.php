@@ -19,14 +19,16 @@
             }
 
             $this->load->model('model_anggota');
+            $this->load->model('model_kategori');
         }
 
         public function info($id) 
         {
             $where = array('id_anggota' => $id);
             $data['anggota'] = $this->model_anggota->user_info($where, 'tbl_anggota');
+            $data['kategori'] = $this->model_kategori->get_data();
             $this->load->view('templates/anggota/header.php');
-            $this->load->view('templates/anggota/sidebar.php');
+            $this->load->view('templates/anggota/sidebar.php', $data);
             $this->load->view('anggota/user.php');
             $this->load->view('templates/anggota/footer.php');
         }
