@@ -5,7 +5,9 @@
   		<div class="container-fluid">
   			<div class="row mb-2">
   				<div class="col-sm-6">
-  					<h1 class="m-0 text-dark">Dashboard</h1>
+  					<?php foreach($buku as $_kategori): ?>
+  					<h1 class="m-0 text-dark">Kategori <?= $_kategori->nama_kategori ?></h1>
+  					<?php endforeach; ?>
   				</div><!-- /.col -->
   				<div class="col-sm-6">
   					<!-- <ol class="breadcrumb float-sm-right">
@@ -55,7 +57,7 @@
   							<i class="fa fa-info mr-2 ml-auto"></i>
   							Detail Buku
   						</a>
-  						<a href="<?= base_url('guest/dashboard/pinjam_buku/'. $_buku->id_buku) ?>" class="btn btn-sm btn-primary mt-3" style="color:white">
+  						<a href="<?= base_url('anggota/dashboard/pinjam_buku/'. $_buku->id_buku) ?>" class="btn btn-sm btn-primary mt-3" style="color:white">
   							<i class="fa fa-book mr-2 ml-auto"></i>
   							Pinjam Buku
   						</a>

@@ -15,10 +15,10 @@
         {
             $data['buku'] = $this->model_buku->get_buku_by_kategori($id, 'tbl_kategori');
             $data['kategori'] = $this->model_kategori->get_data();
-            $this->load->view('templates/guest/header.php');
-            $this->load->view('templates/guest/sidebar.php', $data);
-            $this->load->view('guest/kategori.php', $data);
-            $this->load->view('templates/guest/footer.php');
+            $this->load->view('templates/anggota/header.php');
+            $this->load->view('templates/anggota/sidebar.php', $data);
+            $this->load->view('anggota/kategori.php', $data);
+            $this->load->view('templates/anggota/footer.php');
         }
     }
     

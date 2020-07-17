@@ -58,7 +58,7 @@
                with font-awesome or any other icon font library -->
 						<li class="nav-header">DASHBOARD</li>
 						<li class="nav-item">
-							<a href="<?= base_url('guest/dashboard') ?>" class="nav-link">
+							<a href="<?= base_url('anggota/dashboard') ?>" class="nav-link">
 								<i class="nav-icon fa fa-tachometer-alt"></i>
 								<p>
 									Dashboard
@@ -78,7 +78,7 @@
 							<ul class="nav nav-treeview">
 								<?php foreach($kategori as $_kategori): ?>
 								<li class="nav-item">
-									<a href="<?= base_url('guest/kategori/subcat/').$_kategori->id_kategori ?>" class="nav-link">
+									<a href="<?= base_url('anggota/kategori/subcat/').$_kategori->id_kategori ?>" class="nav-link">
 										<i class="nav-icon-sm fa  fa-circle fa-sm"></i>
 										<p>
 											<?= $_kategori->nama_kategori; ?>
@@ -100,14 +100,14 @@
 							</a>
 							<ul class="nav nav-treeview">
 							<li class="nav-item">
-							<a href="<?= base_url('guest/buku/keranjang_buku') ?>" class="nav-link">
+							<a href="<?= base_url('anggota/buku/keranjang_buku') ?>" class="nav-link">
 								<i class="nav-icon-sm fa fa-cart-plus fa-sm"></i>
 								<p>
 									Keranjang Buku
 									<span class="badge badge-danger right">0</span>
 								</p>
 							</a>
-							<a href="<?= base_url('guest/dashboard') ?>" class="nav-link">
+							<a href="<?= base_url('anggota/dashboard') ?>" class="nav-link">
 								<i class="nav-icon-sm fa fa-book-reader fa-sm"></i>
 								<p>
 									Pinjaman Buku
