@@ -23,8 +23,9 @@
   			<!-- Main row -->
   			<div class="row text-center">
   				<?php foreach($buku as $_buku): ?>
-  				<div class="card ml-4 mb-3 border-0" style="width: 16rem;">
-  					<img class="card-img-top" src="<?= base_url(). 'assets/upload/'. $_buku->gambar?>" alt="Card image cap">
+  				<div class="card ml-4 mb-3 border-0" style="width: 18rem;">
+  					<img class="card-img-top" src="<?= base_url(). 'assets/upload/'. $_buku->gambar?>"
+  						alt="Card image cap">
   					<div class="card-body">
   						<h5 class="card-text text-bold text-capitalize"><?= $_buku->judul_buku ?></h5>
   						<p class="card-text text-center">
@@ -32,8 +33,9 @@
   							<?php if (strlen($_buku->deskripsi_buku) == 1 || strlen($_buku->deskripsi_buku) == 0): ?>
   							<a href=""></a>
   							<?php else:?>
-  							<a type="button" id="read_more" data-toggle="modal" data-target="#modal_read_more" style="color:blue"
-  								data-judul="<?= $_buku->judul_buku?>" data-deskripsi="<?= $_buku->deskripsi_buku ?>">
+  							<a type="button" id="read_more" data-toggle="modal" data-target="#modal_read_more"
+  								style="color:blue" data-judul="<?= $_buku->judul_buku?>"
+  								data-deskripsi="<?= $_buku->deskripsi_buku ?>">
   								Read More
   							</a>
   							<?php endif; ?>
@@ -44,12 +46,18 @@
   						<span class="badge badge-success">Buku Tersedia</span>
   						<?php endif; ?>
   						<br>
-  						<a type="button" id="detail" data-toggle="modal" data-target="#modal_detail" class="btn btn-primary mt-3"
-  							style="color:white" data-id="<?= $_buku->id_buku?>" data-judul="<?= $_buku->judul_buku?>" 
-                data-kategori="<?= $_buku->nama_kategori?>" data-penerbit="<?= $_buku->nama_penerbit?>" 
-                data-pengarang="<?= $_buku->nama_pengarang?>" data-tahun="<?= $_buku->tahun_terbit_buku?>" 
-                data-deskripsi="<?= $_buku->deskripsi_buku?>" data-gambar="<?=  $_buku->gambar?>">
+  						<a id="detail" data-toggle="modal" data-target="#modal_detail"
+  							class="btn btn-sm btn-info mt-3" style="color:white" data-id="<?= $_buku->id_buku?>"
+  							data-judul="<?= $_buku->judul_buku?>" data-kategori="<?= $_buku->nama_kategori?>"
+  							data-penerbit="<?= $_buku->nama_penerbit?>" data-pengarang="<?= $_buku->nama_pengarang?>"
+  							data-tahun="<?= $_buku->tahun_terbit_buku?>" data-deskripsi="<?= $_buku->deskripsi_buku?>"
+  							data-gambar="<?=  $_buku->gambar?>">
+  							<i class="fa fa-info mr-2 ml-auto"></i>
   							Detail Buku
+  						</a>
+  						<a href="<?= base_url('guest/dashboard/pinjam_buku/'. $_buku->id_buku) ?>" class="btn btn-sm btn-primary mt-3" style="color:white">
+  							<i class="fa fa-book mr-2 ml-auto"></i>
+  							Pinjam Buku
   						</a>
   					</div>
   				</div>
@@ -97,50 +105,50 @@
   					<tr>
   						<th>ISBN</th>
   						<td>
-                <span id="dtl_id_buku"></span>
-              </td>
+  							<span id="dtl_id_buku"></span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Judul</th>
   						<td>
-                <span id="dtl_judul_buku"></span>
-              </td>
+  							<span id="dtl_judul_buku"></span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Kategori</th>
   						<td>
-                <span id="dtl_kategori_buku"></span>
-              </td>
+  							<span id="dtl_kategori_buku"></span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Pengarang</th>
   						<td>
-                <span>
-                <span id="dtl_pengarang_buku"></span>
-                </span>
-              </td>
+  							<span>
+  								<span id="dtl_pengarang_buku"></span>
+  							</span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Penerbit</th>
   						<td>
-                <span id="dtl_penerbit_buku"></span>
-              </td>
+  							<span id="dtl_penerbit_buku"></span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Tahun Terbit</th>
   						<td>
-                <span id="dtl_tahun_terbit_buku"></span>
-              </td>
+  							<span id="dtl_tahun_terbit_buku"></span>
+  						</td>
   					</tr>
   					<tr>
   						<th>Status</th>
   						<td>
-              <?php if ($_buku->stok_buku == 0): ?>
-  						  <span class="text-danger">Buku Habis</span>
-  						<?php else: ?>
-  						  <span class="text-success">Buku Tersedia</span>
-  						<?php endif; ?>
-              </td>
+  							<?php if ($_buku->stok_buku == 0): ?>
+  							<span class="text-danger">Buku Habis</span>
+  							<?php else: ?>
+  							<span class="text-success">Buku Tersedia</span>
+  							<?php endif; ?>
+  						</td>
   					</tr>
   				</table>
   			</div>
@@ -152,15 +160,15 @@
   <script>
   	$(document).ready(function () {
   		$(document).on('click', '#read_more', function () {
-  			var judul     = $(this).data('judul');
+  			var judul = $(this).data('judul');
   			var deskripsi = $(this).data('deskripsi');
   			$('#judul_buku').text(judul);
   			$('#deskripsi_buku').text(deskripsi);
   		})
 
   		$(document).on('click', '#detail', function () {
-  			var id        = $(this).data('id');
-  			var judul     = $(this).data('judul');
+  			var id = $(this).data('id');
+  			var judul = $(this).data('judul');
   			var kategori = $(this).data('kategori');
   			var penerbit = $(this).data('penerbit');
   			var tahun_terbit = $(this).data('tahun');
