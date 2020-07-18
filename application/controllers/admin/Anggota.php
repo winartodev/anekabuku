@@ -45,7 +45,7 @@
         {
             $where = array('id_anggota' => $id);
             $data['anggota'] = $this->model_anggota->info_anggota($where, 'tbl_anggota');
-            $data['peminjaman'] = $this->model_peminjaman->get_pinjaman_buku_per_user($id);
+            $data['peminjaman'] = $this->model_peminjaman->get_list_pinjaman_buku_per_user($id);
             $data['id_peminjaman'] = $this->model_peminjaman->generate_number();
             $this->load->view('templates/admin/header.php');
             $this->load->view('templates/admin/sidebar.php');
