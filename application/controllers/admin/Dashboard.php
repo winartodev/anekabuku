@@ -21,6 +21,7 @@
             $this->load->model('model_buku');
             $this->load->model('model_anggota');
             $this->load->model('model_petugas');
+            $this->load->model('model_peminjaman');
         }
 
         public function index()
@@ -28,6 +29,7 @@
             $data['buku'] = $this->model_buku->count_buku();
             $data['anggota'] = $this->model_anggota->count_anggota();
             $data['petugas'] = $this->model_petugas->count_petugas();
+            $data['peminjaman'] = $this->model_peminjaman->count_peminjaman();
             $this->load->view('templates/admin/header.php');
             $this->load->view('templates/admin/sidebar.php');
             $this->load->view('admin/dashboard.php', $data);
