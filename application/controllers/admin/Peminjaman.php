@@ -84,8 +84,11 @@
 
         public function delete_pinjaman($id) 
         {
-            $where = array('id_anggota' => $id);
+            $where = array('id_peminjaman' => $id);
+
             $this->model_peminjaman->delete_data($where, 'tbl_peminjaman');
+
+            $anggota = $this->db->get('tbl_anggota')->row();
 
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         <b>Data peminjaman Berhasil di Hapus.</b>
@@ -94,7 +97,7 @@
                                                         </button>
                                                     </div>');
 
-            redirect(base_url('admin/peminjaman'));
+            redirect(base_url('admin/pengembalian/detail/'). $anggota->id_anggota);
         }   
 
     }
