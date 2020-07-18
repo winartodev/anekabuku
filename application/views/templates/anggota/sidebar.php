@@ -42,8 +42,8 @@
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div class="image">
-						<img src="<?= base_url('assets/upload/anggota/').$this->session->userdata('foto') ?>" class="img-circle elevation-2"
-							alt="<?= $this->session->userdata('foto') ?>">
+						<img src="<?= base_url('assets/upload/anggota/').$this->session->userdata('foto') ?>"
+							class="img-circle elevation-2" alt="<?= $this->session->userdata('foto') ?>">
 					</div>
 					<div class="info">
 						<a href="#" class="d-block"><?= $this->session->userdata('nama_anggota') ?></a>
@@ -78,7 +78,8 @@
 							<ul class="nav nav-treeview">
 								<?php foreach($kategori as $_kategori): ?>
 								<li class="nav-item">
-									<a href="<?= base_url('anggota/kategori/subcat/').$_kategori->id_kategori ?>" class="nav-link">
+									<a href="<?= base_url('anggota/kategori/subcat/').$_kategori->id_kategori ?>"
+										class="nav-link">
 										<i class="nav-icon-sm fa  fa-circle fa-sm"></i>
 										<p>
 											<?= $_kategori->nama_kategori; ?>
@@ -90,36 +91,20 @@
 						</li>
 
 						<li class="nav-header">BUKU</li>
-						<li class="nav-item has-treeview">
-							<a href="" class="nav-link">
-								<i class="nav-icon fas fa-book"></i>
-								<p>
-									Buku
-									<i class="fas fa-angle-left right"></i>
-								</p>
-							</a>
-							<ul class="nav nav-treeview">
-							<li class="nav-item">
-							<a href="<?= base_url('anggota/buku/keranjang_buku') ?>" class="nav-link">
+						<li class="nav-item">
+							<a href="<?= base_url('anggota/peminjaman/') ?>" class="nav-link">
 								<i class="nav-icon-sm fa fa-cart-plus fa-sm"></i>
 								<p>
-									Keranjang Buku
-									<span class="badge badge-danger right">0</span>
-								</p>
-							</a>
-							<a href="<?= base_url('anggota/dashboard') ?>" class="nav-link">
-								<i class="nav-icon-sm fa fa-book-reader fa-sm"></i>
-								<p>
-									Pinjaman Buku
+									Peminjaman Buku
+									<span class="badge badge-danger right"><?= $count_list ?></span>
 								</p>
 							</a>
 						</li>
-							</ul>
-						</li>
-						
+
 						<li class="nav-header">SETTINGS</li>
 						<li class="nav-item">
-							<a href="<?= base_url('anggota/user/info/').$this->session->userdata('id_anggota') ?>" class="nav-link">
+							<a href="<?= base_url('anggota/user/info/').$this->session->userdata('id_anggota') ?>"
+								class="nav-link">
 								<i class="nav-icon fa fa-user-alt"></i>
 								<p>
 									User
