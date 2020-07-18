@@ -10,9 +10,17 @@
                                                         -> get()->result();
         }
 
-        public function get_pinjaman_buku_per_user($id) 
+        public function get_list_pinjaman_buku_per_user($id) 
         {
             return $this->db->from('tbl_list_pinjaman') -> join('tbl_buku', 'tbl_buku.id_buku = tbl_list_pinjaman.id_buku')
+                                                        -> join('tbl_penerbit', 'tbl_penerbit.id_penerbit = tbl_buku.id_penerbit')
+                                                        -> where('id_anggota', $id)
+                                                        -> get()->result();
+        }
+
+        public function get_pinjaman_buku_per_user($id) 
+        {
+            return $this->db->from('tbl_peminjaman') -> join('tbl_buku', 'tbl_buku.id_buku = tbl_peminjaman.id_buku')
                                                         -> join('tbl_penerbit', 'tbl_penerbit.id_penerbit = tbl_buku.id_penerbit')
                                                         -> where('id_anggota', $id)
                                                         -> get()->result();
@@ -26,6 +34,11 @@
         public function count_list_peminjaman() 
         {
             return $this->db->get('tbl_list_pinjaman')->num_rows();
+        }
+
+        public function count_peminjaman() 
+        {
+            return $this->db->get('tbl_peminjaman')->num_rows();
         }
 
         public function check_duplicate($id, $table) 
