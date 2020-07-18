@@ -90,6 +90,14 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a href="<?= base_url('admin/pengembalian') ?>" class="nav-link">
+								<i class="nav-icon fa fa-book-open"></i>
+								<p>
+									Pengembalian Buku
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a href="<?= base_url('admin/anggota') ?>" class="nav-link">
 								<i class="nav-icon fa fa-users"></i>
 								<p>
