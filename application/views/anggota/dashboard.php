@@ -20,6 +20,7 @@
   	<!-- Main content -->
   	<section class="content">
   		<div class="container-fluid">
+		  <?= $this->session->flashdata('pesan'); ?>
   			<!-- Main row -->
   			<div class="row text-center">
   				<?php foreach($buku as $_buku): ?>
@@ -55,7 +56,7 @@
   							<i class="fa fa-info mr-2 ml-auto"></i>
   							Detail Buku
   						</a>
-  						<a href="<?= base_url('anggota/dashboard/pinjam_buku/'. $_buku->id_buku) ?>" class="btn btn-sm btn-primary mt-3" style="color:white">
+  						<a href="<?= base_url('anggota/dashboard/add_to_list/'. $_buku->id_buku) ?>" class="btn btn-sm btn-primary mt-3" style="color:white">
   							<i class="fa fa-book mr-2 ml-auto"></i>
   							Pinjam Buku
   						</a>
